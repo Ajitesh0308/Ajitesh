@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<!-- saved from url=(0203)file:///C:/Users/venne/AppData/Local/Temp/e6210c7a-bde5-44a6-b755-407417e08353_stitch_retail_demand_ai_dashboard.zip.353/stitch_retail_demand_ai_dashboard/ai_demand_forecast_inventory_dashboard/code.html -->
+<html class="dark" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"><link href="./stitch_files/css2" rel="stylesheet"><link href="https://fonts.googleapis.com/" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"><link href="./stitch_files/css2(1)" rel="stylesheet">
+<link href="./stitch_files/css2(2)" rel="stylesheet"><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#0f131d;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="./stitch_files/saved_resource"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-primary": "#003824", "secondary-fixed": "#e1e0ff", "primary-container": "#10b981", "surface-tint": "#4edea3", "on-tertiary": "#472a00", "on-surface": "#dfe2f1", "on-error": "#690005", "on-secondary-fixed": "#07006c", "on-error-container": "#ffdad6", "on-secondary": "#1000a9", "error-container": "#93000a", "inverse-on-surface": "#2c303b", "secondary-container": "#3131c0", "outline-variant": "#3c4a42", "on-primary-fixed": "#002113", "on-secondary-container": "#b0b2ff", "surface-container-highest": "#313540", "error": "#ffb4ab", "outline": "#86948a", "primary-fixed": "#6ffbbe", "background": "#0f131d", "primary": "#4edea3", "surface-variant": "#313540", "surface-container-lowest": "#0a0e18", "tertiary-fixed-dim": "#ffb95f", "tertiary-fixed": "#ffddb8", "on-background": "#dfe2f1", "surface-dim": "#0f131d", "on-tertiary-fixed-variant": "#653e00", "inverse-primary": "#006c49", "tertiary": "#ffb95f", "tertiary-container": "#e29100", "secondary-fixed-dim": "#c0c1ff", "surface-bright": "#353944", "on-secondary-fixed-variant": "#2f2ebe", "primary-fixed-dim": "#4edea3", "on-primary-container": "#00422b", "on-surface-variant": "#bbcabf", "on-primary-fixed-variant": "#005236", "surface": "#0f131d", "surface-container-high": "#262a35", "secondary": "#c0c1ff", "surface-container-low": "#171b26", "on-tertiary-fixed": "#2a1700", "on-tertiary-container": "#523200", "surface-container": "#1c1f2a", "inverse-surface": "#dfe2f1" }, borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, spacing: { "space-sm": "0.5rem", "margin-mobile": "0.75rem", "space-xl": "1.5rem", "margin": "1.5rem", "space-xs": "0.25rem", "gutter": "1rem", "space-md": "0.75rem", "space-lg": "1rem", "gutter-mobile": "0.5rem" }, fontFamily: { "label-sm": ["JetBrains Mono"], "body-md": ["JetBrains Mono"], "body-sm": ["JetBrains Mono"], "headline-lg": ["Space Grotesk"], "headline-xl": ["Space Grotesk"], "label-md": ["JetBrains Mono"], "headline-md": ["Space Grotesk"], "headline-lg-mobile": ["Space Grotesk"], "body-lg": ["JetBrains Mono"], "label-lg": ["JetBrains Mono"], "headline-xl-mobile": ["Space Grotesk"], "headline-sm": ["Space Grotesk"] }, fontSize: { "label-sm": ["9px", { lineHeight: "12px", letterSpacing: "0.08em", fontWeight: "600" }], "body-md": ["13px", { lineHeight: "20px", letterSpacing: "-0.01em", fontWeight: "400" }], "body-sm": ["11px", { lineHeight: "16px", letterSpacing: "0em", fontWeight: "400" }], "headline-lg": ["32px", { lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "600" }], "headline-xl": ["40px", { lineHeight: "48px", letterSpacing: "-0.03em", fontWeight: "700" }], "label-md": ["11px", { lineHeight: "14px", letterSpacing: "0.06em", fontWeight: "500" }], "headline-md": ["22px", { lineHeight: "28px", letterSpacing: "-0.01em", fontWeight: "600" }], "headline-lg-mobile": ["24px", { lineHeight: "32px", letterSpacing: "-0.01em", fontWeight: "600" }], "body-lg": ["15px", { lineHeight: "24px", letterSpacing: "-0.01em", fontWeight: "400" }], "label-lg": ["13px", { lineHeight: "18px", letterSpacing: "0.04em", fontWeight: "500" }], "headline-xl-mobile": ["28px", { lineHeight: "36px", letterSpacing: "-0.02em", fontWeight: "700" }], "headline-sm": ["16px", { lineHeight: "22px", letterSpacing: "0em", fontWeight: "600" }] } } } }</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  <style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.pointer-events-none{pointer-events:none}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.inset-0{inset:0px}.inset-x-0{left:0px;right:0px}.bottom-0{bottom:0px}.bottom-20{bottom:5rem}.left-0{left:0px}.left-4{left:1rem}.right-2{right:0.5rem}.right-4{right:1rem}.top-0{top:0px}.top-2{top:0.5rem}.z-40{z-index:40}.z-50{z-index:50}.my-space-xs{margin-top:0.25rem;margin-bottom:0.25rem}.mt-0\.5{margin-top:0.125rem}.mt-space-xs{margin-top:0.25rem}.flex{display:flex}.grid{display:grid}.h-1{height:0.25rem}.h-1\.5{height:0.375rem}.h-11{height:2.75rem}.h-16{height:4rem}.h-2{height:0.5rem}.h-3{height:0.75rem}.h-4{height:1rem}.h-44{height:11rem}.h-7{height:1.75rem}.h-8{height:2rem}.h-9{height:2.25rem}.h-full{height:100%}.h-px{height:1px}.min-h-screen{min-height:100vh}.w-1\.5{width:0.375rem}.w-11{width:2.75rem}.w-2{width:0.5rem}.w-3{width:0.75rem}.w-4{width:1rem}.w-72{width:18rem}.w-8{width:2rem}.w-9{width:2.25rem}.w-\[15\%\]{width:15%}.w-\[20\%\]{width:20%}.w-\[45\%\]{width:45%}.w-auto{width:auto}.w-full{width:100%}.w-16{width:4rem}.min-w-0{min-width:0px}.max-w-\[80vw\]{max-width:80vw}.flex-1{flex:1 1 0%}.shrink-0{flex-shrink:0}.-translate-x-full{--tw-translate-x:-100%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.translate-y-24{--tw-translate-y:6rem;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.transform{transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}@keyframes bounce{0%, 100%{transform:translateY(-25%);animation-timing-function:cubic-bezier(0.8,0,1,1)}50%{transform:none;animation-timing-function:cubic-bezier(0,0,0.2,1)}}.animate-bounce{animation:bounce 1s infinite}@keyframes ping{75%, 100%{transform:scale(2);opacity:0}}.animate-ping{animation:ping 1s cubic-bezier(0, 0, 0.2, 1) infinite}@keyframes pulse{50%{opacity:.5}}.animate-pulse{animation:pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite}.cursor-pointer{cursor:pointer}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.flex-col{flex-direction:column}.items-start{align-items:flex-start}.items-center{align-items:center}.items-baseline{align-items:baseline}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.justify-around{justify-content:space-around}.gap-0\.5{gap:0.125rem}.gap-1{gap:0.25rem}.gap-1\.5{gap:0.375rem}.gap-space-lg{gap:1rem}.gap-space-md{gap:0.75rem}.gap-space-sm{gap:0.5rem}.gap-space-xs{gap:0.25rem}.overflow-hidden{overflow:hidden}.overflow-visible{overflow:visible}.overflow-x-auto{overflow-x:auto}.overflow-y-auto{overflow-y:auto}.truncate{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.whitespace-nowrap{white-space:nowrap}.rounded{border-radius:0.125rem}.rounded-full{border-radius:0.75rem}.rounded-lg{border-radius:0.25rem}.bg-error{--tw-bg-opacity:1;background-color:rgb(255 180 171 / var(--tw-bg-opacity, 1))}.bg-error-container{--tw-bg-opacity:1;background-color:rgb(147 0 10 / var(--tw-bg-opacity, 1))}.bg-error\/20{background-color:rgb(255 180 171 / 0.2)}.bg-primary{--tw-bg-opacity:1;background-color:rgb(78 222 163 / var(--tw-bg-opacity, 1))}.bg-primary\/20{background-color:rgb(78 222 163 / 0.2)}.bg-secondary{--tw-bg-opacity:1;background-color:rgb(192 193 255 / var(--tw-bg-opacity, 1))}.bg-secondary-container{--tw-bg-opacity:1;background-color:rgb(49 49 192 / var(--tw-bg-opacity, 1))}.bg-secondary\/20{background-color:rgb(192 193 255 / 0.2)}.bg-secondary\/40{background-color:rgb(192 193 255 / 0.4)}.bg-surface{--tw-bg-opacity:1;background-color:rgb(15 19 29 / var(--tw-bg-opacity, 1))}.bg-surface-container{--tw-bg-opacity:1;background-color:rgb(28 31 42 / var(--tw-bg-opacity, 1))}.bg-surface-container-high{--tw-bg-opacity:1;background-color:rgb(38 42 53 / var(--tw-bg-opacity, 1))}.bg-surface-container-high\/70{background-color:rgb(38 42 53 / 0.7)}.bg-surface-container-highest{--tw-bg-opacity:1;background-color:rgb(49 53 64 / var(--tw-bg-opacity, 1))}.bg-surface-container-highest\/30{background-color:rgb(49 53 64 / 0.3)}.bg-surface-container-highest\/60{background-color:rgb(49 53 64 / 0.6)}.bg-surface-container-low{--tw-bg-opacity:1;background-color:rgb(23 27 38 / var(--tw-bg-opacity, 1))}.bg-surface-container-lowest{--tw-bg-opacity:1;background-color:rgb(10 14 24 / var(--tw-bg-opacity, 1))}.bg-surface-container-lowest\/80{background-color:rgb(10 14 24 / 0.8)}.bg-surface-container\/50{background-color:rgb(28 31 42 / 0.5)}.bg-surface\/80{background-color:rgb(15 19 29 / 0.8)}.bg-tertiary-container{--tw-bg-opacity:1;background-color:rgb(226 145 0 / var(--tw-bg-opacity, 1))}.bg-tertiary-container\/20{background-color:rgb(226 145 0 / 0.2)}.bg-tertiary-container\/30{background-color:rgb(226 145 0 / 0.3)}.bg-white\/20{background-color:rgb(255 255 255 / 0.2)}.fill-transparent{fill:transparent}.stroke-primary{stroke:#4edea3}.object-contain{object-fit:contain}.object-cover{object-fit:cover}.p-1{padding:0.25rem}.p-gutter{padding:1rem}.p-space-md{padding:0.75rem}.p-space-sm{padding:0.5rem}.p-space-xs{padding:0.25rem}.px-1{padding-left:0.25rem;padding-right:0.25rem}.px-1\.5{padding-left:0.375rem;padding-right:0.375rem}.px-gutter{padding-left:1rem;padding-right:1rem}.px-gutter-mobile{padding-left:0.5rem;padding-right:0.5rem}.px-margin-mobile{padding-left:0.75rem;padding-right:0.75rem}.px-space-md{padding-left:0.75rem;padding-right:0.75rem}.px-space-sm{padding-left:0.5rem;padding-right:0.5rem}.px-space-xs{padding-left:0.25rem;padding-right:0.25rem}.py-0\.5{padding-top:0.125rem;padding-bottom:0.125rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-1\.5{padding-top:0.375rem;padding-bottom:0.375rem}.py-space-sm{padding-top:0.5rem;padding-bottom:0.5rem}.py-space-xs{padding-top:0.25rem;padding-bottom:0.25rem}.pb-20{padding-bottom:5rem}.pb-space-xl{padding-bottom:1.5rem}.pl-space-xs{padding-left:0.25rem}.pt-0\.5{padding-top:0.125rem}.pt-16{padding-top:4rem}.pt-space-xs{padding-top:0.25rem}.text-center{text-align:center}.font-body-sm{font-family:JetBrains Mono}.font-headline-lg-mobile{font-family:Space Grotesk}.font-headline-md{font-family:Space Grotesk}.font-headline-sm{font-family:Space Grotesk}.font-label-lg{font-family:JetBrains Mono}.font-label-md{font-family:JetBrains Mono}.font-label-sm{font-family:JetBrains Mono}.font-mono{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}.text-\[14px\]{font-size:14px}.text-\[16px\]{font-size:16px}.text-\[18px\]{font-size:18px}.text-\[20px\]{font-size:20px}.text-\[22px\]{font-size:22px}.text-\[28px\]{font-size:28px}.text-\[9px\]{font-size:9px}.text-body-sm{font-size:11px;line-height:16px;letter-spacing:0em;font-weight:400}.text-headline-lg-mobile{font-size:24px;line-height:32px;letter-spacing:-0.01em;font-weight:600}.text-headline-md{font-size:22px;line-height:28px;letter-spacing:-0.01em;font-weight:600}.text-headline-sm{font-size:16px;line-height:22px;letter-spacing:0em;font-weight:600}.text-label-lg{font-size:13px;line-height:18px;letter-spacing:0.04em;font-weight:500}.text-label-md{font-size:11px;line-height:14px;letter-spacing:0.06em;font-weight:500}.text-label-sm{font-size:9px;line-height:12px;letter-spacing:0.08em;font-weight:600}.font-bold{font-weight:700}.font-medium{font-weight:500}.font-normal{font-weight:400}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.leading-none{line-height:1}.leading-tight{line-height:1.25}.tracking-tight{letter-spacing:-0.025em}.tracking-wider{letter-spacing:0.05em}.tracking-widest{letter-spacing:0.1em}.text-error{--tw-text-opacity:1;color:rgb(255 180 171 / var(--tw-text-opacity, 1))}.text-on-error{--tw-text-opacity:1;color:rgb(105 0 5 / var(--tw-text-opacity, 1))}.text-on-error-container{--tw-text-opacity:1;color:rgb(255 218 214 / var(--tw-text-opacity, 1))}.text-on-primary{--tw-text-opacity:1;color:rgb(0 56 36 / var(--tw-text-opacity, 1))}.text-on-secondary{--tw-text-opacity:1;color:rgb(16 0 169 / var(--tw-text-opacity, 1))}.text-on-secondary-container{--tw-text-opacity:1;color:rgb(176 178 255 / var(--tw-text-opacity, 1))}.text-on-surface{--tw-text-opacity:1;color:rgb(223 226 241 / var(--tw-text-opacity, 1))}.text-on-surface-variant{--tw-text-opacity:1;color:rgb(187 202 191 / var(--tw-text-opacity, 1))}.text-on-tertiary{--tw-text-opacity:1;color:rgb(71 42 0 / var(--tw-text-opacity, 1))}.text-primary{--tw-text-opacity:1;color:rgb(78 222 163 / var(--tw-text-opacity, 1))}.text-secondary{--tw-text-opacity:1;color:rgb(192 193 255 / var(--tw-text-opacity, 1))}.text-tertiary{--tw-text-opacity:1;color:rgb(255 185 95 / var(--tw-text-opacity, 1))}.opacity-0{opacity:0}.opacity-80{opacity:0.8}.shadow-\[0_1px_8px_rgba\(0\2c 0\2c 0\2c 0\.04\)\]{--tw-shadow:0 1px 8px rgba(0,0,0,0.04);--tw-shadow-colored:0 1px 8px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-md{--tw-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-sm{--tw-shadow:0 1px 2px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.ring-1{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.ring-2{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.ring-primary\/40{--tw-ring-color:rgb(78 222 163 / 0.4)}.ring-surface{--tw-ring-opacity:1;--tw-ring-color:rgb(15 19 29 / var(--tw-ring-opacity, 1))}.backdrop-blur-2xl{--tw-backdrop-blur:blur(40px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.backdrop-blur-md{--tw-backdrop-blur:blur(12px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.backdrop-blur-xl{--tw-backdrop-blur:blur(24px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-opacity{transition-property:opacity;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-transform{transition-property:transform;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-300{transition-duration:300ms}.hover\:bg-surface-container-high:hover{--tw-bg-opacity:1;background-color:rgb(38 42 53 / var(--tw-bg-opacity, 1))}.hover\:bg-surface-container-highest:hover{--tw-bg-opacity:1;background-color:rgb(49 53 64 / var(--tw-bg-opacity, 1))}.hover\:text-on-surface:hover{--tw-text-opacity:1;color:rgb(223 226 241 / var(--tw-text-opacity, 1))}.hover\:text-primary:hover{--tw-text-opacity:1;color:rgb(78 222 163 / var(--tw-text-opacity, 1))}.active\:scale-95:active{--tw-scale-x:.95;--tw-scale-y:.95;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.active\:bg-surface-container-high:active{--tw-bg-opacity:1;background-color:rgb(38 42 53 / var(--tw-bg-opacity, 1))}</style></head><body class="bg-surface text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 inset-x-0 z-50 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe"><div class="h-16 px-gutter-mobile flex items-center justify-between"><div class="flex items-center gap-space-xs"><button class="w-11 h-11 flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-95" onclick="document.getElementById('mobile-drawer').classList.remove('-translate-x-full'); document.getElementById('drawer-backdrop').classList.remove('opacity-0','pointer-events-none');" type="button"><span class="material-symbols-outlined text-[22px]">menu</span></button><div class="flex items-center gap-space-xs"><img alt="OptiStock AI Logo" class="h-8 w-auto object-contain" src="./stitch_files/unnamed.png"><div class="flex flex-col pl-space-xs"><span class="font-label-sm text-label-sm uppercase tracking-widest text-primary">OptiStock AI</span><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight leading-none">Forecast Overview</span></div></div></div><div class="flex items-center gap-space-xs"><button class="relative w-11 h-11 flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-2 right-2 flex items-center justify-center w-4 h-4 rounded-full bg-error text-on-error font-label-sm text-[9px] font-bold leading-none ring-2 ring-surface">2</span></button><button class="w-11 h-11 flex items-center justify-center" type="button"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-primary/40" src="./stitch_files/unnamed.jpg"></button></div></div></header><div class="fixed inset-0 z-50 bg-surface-container-lowest/80 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300" id="drawer-backdrop" onclick="document.getElementById('mobile-drawer').classList.add('-translate-x-full'); this.classList.add('opacity-0','pointer-events-none');"></div><aside class="fixed top-0 bottom-0 left-0 z-50 w-72 max-w-[80vw] bg-surface-container-low backdrop-blur-2xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] flex flex-col -translate-x-full transition-transform duration-300 pt-safe pb-safe" id="mobile-drawer"><div class="h-16 px-gutter flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="OptiStock AI Logo" class="h-7 w-auto object-contain" src="./stitch_files/unnamed.png"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight">OptiStock AI</span></div><button class="w-11 h-11 flex items-center justify-center text-on-surface-variant hover:text-primary" onclick="document.getElementById('mobile-drawer').classList.add('-translate-x-full'); document.getElementById('drawer-backdrop').classList.add('opacity-0','pointer-events-none');" type="button"><span class="material-symbols-outlined text-[20px]">close</span></button></div><div class="px-gutter py-space-xs"><div class="flex items-center gap-space-xs font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider"><span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>Engine: Neural V4.8-Active</div></div><nav class="flex-1 overflow-y-auto px-gutter-mobile py-space-sm flex flex-col gap-space-xs"><a class="flex items-center gap-space-md h-11 px-space-md rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" data-path="forecast-overview" href="file:///C:/Users/venne/AppData/Local/Temp/e6210c7a-bde5-44a6-b755-407417e08353_stitch_retail_demand_ai_dashboard.zip.353/stitch_retail_demand_ai_dashboard/ai_demand_forecast_inventory_dashboard/code.html#"><span class="material-symbols-outlined text-[20px]">query_stats</span><span class="font-label-lg text-label-lg">Forecast Overview</span></a><a class="flex items-center gap-space-md h-11 px-space-md rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" data-path="sales-analytics" href="file:///C:/Users/venne/AppData/Local/Temp/e6210c7a-bde5-44a6-b755-407417e08353_stitch_retail_demand_ai_dashboard.zip.353/stitch_retail_demand_ai_dashboard/ai_demand_forecast_inventory_dashboard/code.html#"><span class="material-symbols-outlined text-[20px]">monitoring</span><span class="font-label-lg text-label-lg">Sales Analytics</span></a><a class="flex items-center gap-space-md h-11 px-space-md rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" data-path="seasonality-trends" href="file:///C:/Users/venne/AppData/Local/Temp/e6210c7a-bde5-44a6-b755-407417e08353_stitch_retail_demand_ai_dashboard.zip.353/stitch_retail_demand_ai_dashboard/ai_demand_forecast_inventory_dashboard/code.html#"><span class="material-symbols-outlined text-[20px]">show_chart</span><span class="font-label-lg text-label-lg">Seasonality &amp; Trends</span></a><a class="flex items-center gap-space-md h-11 px-space-md rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" data-path="anomaly-radar" href="file:///C:/Users/venne/AppData/Local/Temp/e6210c7a-bde5-44a6-b755-407417e08353_stitch_retail_demand_ai_dashboard.zip.353/stitch_retail_demand_ai_dashboard/ai_demand_forecast_inventory_dashboard/code.html#"><span class="material-symbols-outlined text-[20px]">radar</span><span class="font-label-lg text-label-lg">Anomaly Radar</span></a><a class="flex items-center gap-space-md h-11 px-space-md rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" data-path="inventory-actions" href="file:///C:/Users/venne/AppData/Local/Temp/e6210c7a-bde5-44a6-b755-407417e08353_stitch_retail_demand_ai_dashboard.zip.353/stitch_retail_demand_ai_dashboard/ai_demand_forecast_inventory_dashboard/code.html#"><span class="material-symbols-outlined text-[20px]">inventory_2</span><span class="font-label-lg text-label-lg">Inventory Actions</span></a><a class="flex items-center gap-space-md h-11 px-space-md rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" data-path="csv-ingestion" href="file:///C:/Users/venne/AppData/Local/Temp/e6210c7a-bde5-44a6-b755-407417e08353_stitch_retail_demand_ai_dashboard.zip.353/stitch_retail_demand_ai_dashboard/ai_demand_forecast_inventory_dashboard/code.html#"><span class="material-symbols-outlined text-[20px]">upload_file</span><span class="font-label-lg text-label-lg">CSV Ingestion</span></a><div class="h-px bg-surface-container-highest/30 my-space-xs"></div><a class="flex items-center gap-space-md h-11 px-space-md rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" data-path="settings" href="file:///C:/Users/venne/AppData/Local/Temp/e6210c7a-bde5-44a6-b755-407417e08353_stitch_retail_demand_ai_dashboard.zip.353/stitch_retail_demand_ai_dashboard/ai_demand_forecast_inventory_dashboard/code.html#"><span class="material-symbols-outlined text-[20px]">settings</span><span class="font-label-lg text-label-lg">Settings</span></a></nav><div class="p-gutter bg-surface-container/50"><div class="flex items-center gap-space-sm"><img alt="Profile" class="w-9 h-9 rounded-full object-cover" src="./stitch_files/unnamed.jpg"><div class="flex flex-col min-w-0 flex-1"><span class="font-label-md text-label-md text-on-surface truncate">Lead Supply Analyst</span><span class="font-label-sm text-label-sm text-primary truncate">Terminal #882</span></div></div></div></aside><main class="flex flex-col relative w-full pt-16 pb-20 bg-surface min-h-screen"><div class="flex flex-col w-full px-margin-mobile pb-space-xl gap-space-lg">
+<!-- Realtime Telemetry Strip -->
+<div class="flex items-center justify-between px-space-md py-space-xs rounded bg-surface-container-low shadow-sm">
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Inference Stream</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm text-primary uppercase">v4.8 Neural-Synced</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">0.42s latency</span>
+</div>
+</div>
+<!-- Section 1: Executive Quick Telemetry Bento -->
+<div class="grid grid-cols-1 gap-space-sm">
+<!-- Card 1: Projected Demand -->
+<div class="p-space-md rounded bg-surface-container-low shadow-sm flex flex-col gap-space-xs relative overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">AI Projected Demand</span>
+<span class="px-space-xs py-0.5 rounded bg-primary text-on-primary font-label-sm text-label-sm">98.4% AI Confidence</span>
+</div>
+<div class="flex items-baseline justify-between mt-space-xs">
+<div class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface font-bold tracking-tight">184.2K <span class="font-body-sm text-body-sm text-on-surface-variant font-normal">units</span></div>
+<div class="flex items-center gap-1 text-primary font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px]">arrow_upward</span>
+          +18.4%
+        </div>
+</div>
+<div class="w-full flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm">
+<span>30-day trailing baseline: 155.6K</span>
+<span class="text-primary font-label-sm text-label-sm">SURGE STATE</span>
+</div>
+<!-- Ambient Sparkline -->
+<svg class="w-full h-8 mt-space-xs stroke-primary fill-transparent opacity-80" viewBox="0 0 320 32">
+<path d="M0,28 L30,24 L60,26 L90,18 L120,20 L150,12 L180,15 L210,9 L240,11 L270,4 L300,6 L320,2" fill="none" stroke-linecap="round" stroke-width="2"></path>
+</svg>
+</div>
+<!-- Dual Metric Row -->
+<div class="grid grid-cols-2 gap-space-sm">
+<!-- Card 2: Stockout Risk -->
+<div class="p-space-md rounded bg-surface-container-low shadow-sm flex flex-col justify-between gap-space-xs">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant">Stockout Risk</span>
+<span class="px-1.5 py-0.5 rounded bg-error-container text-on-error-container font-label-sm text-label-sm">3 SKUs Crit</span>
+</div>
+<div class="font-headline-md text-headline-md text-error mt-space-xs font-bold">$14,280</div>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">At risk next 14 days</span>
+</div>
+<!-- Card 3: Recommended POs -->
+<div class="p-space-md rounded bg-surface-container-low shadow-sm flex flex-col justify-between gap-space-xs">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant">Action Queue</span>
+<span class="px-1.5 py-0.5 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">Ready</span>
+</div>
+<div class="font-headline-md text-headline-md text-secondary mt-space-xs font-bold">1,420 <span class="font-label-sm text-label-sm font-normal">units</span></div>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Across 3 auto-POs</span>
+</div>
+</div>
+</div>
+<!-- Section 2: CSV Sales Data Ingestion & Sync Card -->
+<div class="p-space-md rounded bg-surface-container-high shadow-md flex flex-col gap-space-sm relative">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">database</span>
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">POS / ERP Stream Sync</span>
+</div>
+<span class="font-label-sm text-label-sm px-space-xs py-0.5 rounded bg-surface-container-highest text-on-surface-variant">Model v4.2</span>
+</div>
+<div class="p-space-md rounded bg-surface-container-lowest flex flex-col items-center justify-center text-center gap-space-xs cursor-pointer transition-colors active:bg-surface-container-high" id="dropzone">
+<span class="material-symbols-outlined text-primary text-[28px] animate-bounce">upload_file</span>
+<div class="font-label-md text-label-md text-on-surface font-medium">Drop POS or ERP sales history CSV</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Drag or tap to ingest transactional records</div>
+<button class="mt-space-xs px-space-md py-1.5 rounded bg-primary text-on-primary font-label-md text-label-md font-semibold tracking-wider uppercase active:scale-95 transition-transform" type="button">
+        Upload CSV
+      </button>
+</div>
+<!-- Sync status & Schema Guide -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-1.5 font-body-sm text-body-sm text-on-surface-variant">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span class="truncate">Last synced: <span class="text-on-surface font-mono">pos_oct_nov_feed.csv</span></span>
+</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">42,890 rows processed · Retrained 2h ago</div>
+</div>
+<div class="p-space-xs rounded bg-surface-container flex items-center justify-between gap-space-xs overflow-x-auto">
+<span class="font-label-sm text-label-sm text-on-surface-variant whitespace-nowrap">Schema:</span>
+<div class="flex items-center gap-1 overflow-x-auto">
+<span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-surface-container-highest text-secondary whitespace-nowrap">SKU</span>
+<span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-surface-container-highest text-secondary whitespace-nowrap">Store_ID</span>
+<span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-surface-container-highest text-secondary whitespace-nowrap">Date</span>
+<span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-surface-container-highest text-secondary whitespace-nowrap">Units_Sold</span>
+<span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-surface-container-highest text-secondary whitespace-nowrap">Promo_Flag</span>
+</div>
+</div>
+</div>
+<!-- Section 3: Multi-horizon Demand Forecast & Historical Sales Chart -->
+<div class="p-space-md rounded bg-surface-container-low shadow-sm flex flex-col gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">ssid_chart</span>
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">Demand Trajectory</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary uppercase">Active P90/P50</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Predictive multi-horizon curve overlay</div>
+</div>
+<!-- Interactive Horizon Switcher -->
+<div class="grid grid-cols-3 p-1 rounded bg-surface-container gap-1">
+<button class="py-1 text-center rounded bg-primary text-on-primary font-label-sm text-label-sm font-semibold transition-all" id="horizon-7d" onclick="switchHorizon('7d')" type="button">7 Days</button>
+<button class="py-1 text-center rounded text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm transition-all" id="horizon-30d" onclick="switchHorizon('30d')" type="button">30 Days</button>
+<button class="py-1 text-center rounded text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm transition-all" id="horizon-act" onclick="switchHorizon('act')" type="button">Actuals Only</button>
+</div>
+<!-- Rich SVG Chart Container -->
+<div class="relative w-full rounded bg-surface-container-lowest p-space-xs overflow-hidden">
+<!-- Callout Micro-Banner -->
+<div class="flex items-center justify-between px-space-xs py-1 rounded bg-surface-container-high/70 text-on-surface font-label-sm text-label-sm">
+<span class="flex items-center gap-1 text-tertiary">
+<span class="material-symbols-outlined text-[14px]">bolt</span>
+          Black Friday Surge
+        </span>
+<span class="font-mono text-primary">Nov 28: 8,420 units (peak)</span>
+</div>
+<svg class="w-full h-44 mt-space-xs overflow-visible" id="demand-chart" viewBox="0 0 340 160">
+<defs>
+<!-- Gradient for Confidence Interval P90 -->
+<lineargradient id="p90Grad" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#c0c1ff" stop-opacity="0.32"></stop>
+<stop offset="100%" stop-color="#c0c1ff" stop-opacity="0.02"></stop>
+</lineargradient>
+<lineargradient id="actualsGrad" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#4edea3" stop-opacity="0.25"></stop>
+<stop offset="100%" stop-color="#4edea3" stop-opacity="0.0"></stop>
+</lineargradient>
+</defs>
+<!-- Grid Lines -->
+<line stroke="#313540" stroke-dasharray="3,3" stroke-width="0.8" x1="10" x2="330" y1="20" y2="20"></line>
+<line stroke="#313540" stroke-dasharray="3,3" stroke-width="0.8" x1="10" x2="330" y1="60" y2="60"></line>
+<line stroke="#313540" stroke-dasharray="3,3" stroke-width="0.8" x1="10" x2="330" y1="100" y2="100"></line>
+<line stroke="#313540" stroke-width="0.8" x1="10" x2="330" y1="140" y2="140"></line>
+<!-- Confidence Area P90 (Forecast side) -->
+<polygon fill="url(#p90Grad)" id="confidence-band" points="160,110 190,80 230,40 270,30 310,15 330,12 330,85 310,95 270,105 230,115 190,125 160,110"></polygon>
+<!-- Actuals Area Fill -->
+<polygon fill="url(#actualsGrad)" points="10,135 45,120 80,125 115,95 160,110 160,140 10,140"></polygon>
+<!-- Historical Actual Line (Emerald) -->
+<polyline fill="none" points="10,135 45,120 80,125 115,95 160,110" stroke="#4edea3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></polyline>
+<!-- AI Forecast P50 Line (Indigo Dashed) -->
+<polyline fill="none" id="forecast-line" points="160,110 190,95 230,65 270,55 310,35 330,28" stroke="#c0c1ff" stroke-dasharray="4,3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></polyline>
+<!-- Vertical Division: Now -->
+<line stroke="#ffb95f" stroke-dasharray="2,2" stroke-width="1.2" x1="160" x2="160" y1="10" y2="145"></line>
+<text fill="#ffb95f" font-family="JetBrains Mono" font-size="8" text-anchor="end" x="156" y="153">NOW</text>
+<!-- Points of Interest -->
+<circle cx="160" cy="110" fill="#4edea3" r="3.5" stroke="#0f131d" stroke-width="1.5"></circle>
+<circle cx="310" cy="35" fill="#c0c1ff" r="4" stroke="#0f131d" stroke-width="1.5"></circle>
+<!-- Peak Marker Pin -->
+<g transform="translate(310, 35)">
+<line stroke="#ffb95f" stroke-width="1" x1="0" x2="0" y1="-4" y2="-18"></line>
+<circle cx="0" cy="-20" fill="#ffb95f" r="3"></circle>
+</g>
+<!-- X-Axis Labels -->
+<text fill="#86948a" font-family="JetBrains Mono" font-size="8" x="10" y="153">D-14</text>
+<text fill="#86948a" font-family="JetBrains Mono" font-size="8" x="80" y="153">D-7</text>
+<text fill="#86948a" font-family="JetBrains Mono" font-size="8" x="230" y="153">+7D</text>
+<text fill="#86948a" font-family="JetBrains Mono" font-size="8" x="315" y="153">+14D</text>
+</svg>
+<!-- Dynamic Interactive Tooltip Display -->
+<div class="mt-space-xs p-space-xs rounded bg-surface-container flex items-center justify-between text-on-surface" id="chart-tooltip">
+<div class="flex items-center gap-1 font-body-sm text-body-sm">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span>Forecast Nov 28:</span>
+</div>
+<div class="font-mono text-primary font-label-md text-label-md font-bold">8,420 u (+62% peak)</div>
+</div>
+</div>
+<!-- Chart Legend -->
+<div class="flex items-center justify-around font-label-sm text-label-sm text-on-surface-variant">
+<div class="flex items-center gap-1">
+<span class="w-3 h-1 rounded bg-primary"></span>
+<span>Actual Sales</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="w-3 h-1 rounded bg-secondary"></span>
+<span>AI P50 Forecast</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="w-3 h-1 rounded bg-secondary/40"></span>
+<span>P90 Bound</span>
+</div>
+</div>
+</div>
+<!-- Section 4: AI Trend & Seasonality Detection Engine -->
+<div class="p-space-md rounded bg-surface-container-low shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-tertiary text-[20px]">cyclone</span>
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">Seasonality Engine</span>
+</div>
+<span class="px-space-xs py-0.5 rounded bg-tertiary-container/30 text-tertiary font-label-sm text-label-sm">High Pattern Match</span>
+</div>
+<!-- Peak Seasonality Hero Notification -->
+<div class="p-space-md rounded bg-surface-container flex items-start gap-space-sm">
+<div class="w-8 h-8 rounded bg-tertiary-container/20 text-tertiary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">ac_unit</span>
+</div>
+<div class="flex flex-col gap-0.5 min-w-0">
+<div class="font-label-md text-label-md text-tertiary font-bold">Holiday Peak Seasonality Detected</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant leading-tight">
+          +34% velocity on <span class="text-on-surface font-medium">Outerwear &amp; Knitwear</span> starting in 12 days. Supply buffer recommended.
+        </div>
+</div>
+</div>
+<!-- Micro-Trends Pill Deck -->
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Category Vectors</span>
+<div class="flex items-center justify-between p-space-xs px-space-sm rounded bg-surface-container-highest/60">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[16px]">trending_up</span>
+<span class="font-label-md text-label-md text-on-surface">Wool Sweaters</span>
+</div>
+<div class="flex items-center gap-space-xs font-mono font-label-sm text-label-sm">
+<span class="text-primary font-semibold">Bullish +42%</span>
+<span class="px-1 rounded bg-primary/20 text-primary">P50 Surge</span>
+</div>
+</div>
+<div class="flex items-center justify-between p-space-xs px-space-sm rounded bg-surface-container-highest/60">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[16px]">horizontal_rule</span>
+<span class="font-label-md text-label-md text-on-surface">Thermal Mugs</span>
+</div>
+<div class="flex items-center gap-space-xs font-mono font-label-sm text-label-sm">
+<span class="text-secondary font-semibold">Steady +11%</span>
+<span class="px-1 rounded bg-secondary/20 text-secondary">Optimal</span>
+</div>
+</div>
+<div class="flex items-center justify-between p-space-xs px-space-sm rounded bg-surface-container-highest/60">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-error text-[16px]">trending_down</span>
+<span class="font-label-md text-label-md text-on-surface">Light Rainwear</span>
+</div>
+<div class="flex items-center gap-space-xs font-mono font-label-sm text-label-sm">
+<span class="text-error font-semibold">Declining -19%</span>
+<span class="px-1 rounded bg-error/20 text-error">Transition</span>
+</div>
+</div>
+</div>
+<!-- Seasonality Index Heat Bar -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Cycle Distribution: Oct - Jan</span>
+<span class="text-primary">Peak Velocity: Nov 25 - Dec 20</span>
+</div>
+<div class="w-full h-3 rounded bg-surface-container-highest overflow-hidden flex">
+<div class="h-full bg-secondary/40 w-[20%]" title="Pre-Season"></div>
+<div class="h-full bg-secondary w-[15%]" title="Ramping"></div>
+<div class="h-full bg-primary w-[45%] relative">
+<div class="absolute inset-0 bg-white/20 animate-pulse"></div>
+</div>
+<div class="h-full bg-tertiary-container w-[20%]" title="Post-Holiday Clearance"></div>
+</div>
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant mt-0.5">
+<span>Early Run</span>
+<span class="text-primary font-bold">Holiday Crest (Now)</span>
+<span>Taper</span>
+</div>
+</div>
+</div>
+<!-- Section 5: Real-Time Anomaly Alerts -->
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-error text-[20px]">radar</span>
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">Telemetry Anomalies</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">2 Unresolved Flags</span>
+</div>
+<!-- Critical Alert Card -->
+<div class="p-space-md rounded bg-surface-container-low shadow-sm flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="px-1.5 py-0.5 rounded bg-error text-on-error font-label-sm text-label-sm font-bold uppercase">CRITICAL</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Sudden Stockout Hazard</span>
+</div>
+<span class="font-label-sm text-label-sm text-error font-mono">14d lead time</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">
+        SKU <span class="text-on-surface font-mono font-bold">#SKU-8821</span> (Cashmere Crewneck): Run rate spiked <span class="text-error font-bold">+145%</span> vs forecast due to viral social mention. Depot stock exhaustion in 3.4 days.
+      </div>
+<div class="flex items-center justify-between pt-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Predicted deficit: -338 units</span>
+<button class="px-space-md py-1 rounded bg-primary text-on-primary font-label-sm text-label-sm font-semibold tracking-wider uppercase active:scale-95 transition-transform" onclick="quickReorder('SKU-8821')" type="button">
+          Reorder Now
+        </button>
+</div>
+</div>
+<!-- Warning Alert Card -->
+<div class="p-space-md rounded bg-surface-container-low shadow-sm flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="px-1.5 py-0.5 rounded bg-tertiary-container text-on-tertiary font-label-sm text-label-sm font-bold uppercase">WARNING</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Surplus Accumulation</span>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary font-mono">Holding Cost ↑</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">
+        SKU <span class="text-on-surface font-mono font-bold">#SKU-3104</span> (Waterproof Windbreaker): Velocity dropped <span class="text-tertiary font-bold">-28%</span> below baseline. Carrying 620 surplus units across East Hub.
+      </div>
+<div class="flex items-center justify-between pt-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Rec: Markdown or Inter-store Transfer</span>
+<button class="px-space-md py-1 rounded bg-surface-container-high text-secondary font-label-sm text-label-sm font-semibold tracking-wider uppercase hover:bg-surface-container-highest transition-colors" type="button">
+          Redistribute
+        </button>
+</div>
+</div>
+</div>
+<!-- Section 6: Prescriptive Inventory Action Table & Reorder Cards -->
+<div class="p-space-md rounded bg-surface-container-low shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">rule_settings</span>
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">Prescriptive Actions</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary uppercase">Autonomous Queue</span>
+</div>
+<!-- SKU Card 1 -->
+<div class="p-space-sm rounded bg-surface-container flex flex-col gap-space-xs" id="row-sku-8821">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs min-w-0">
+<span class="font-mono text-primary font-label-md text-label-md">SKU-8821</span>
+<span class="font-label-md text-label-md text-on-surface truncate">Cashmere Crewneck</span>
+</div>
+<span class="px-1.5 py-0.2 rounded bg-error/20 text-error font-label-sm text-label-sm font-mono">Runout Risk</span>
+</div>
+<div class="grid grid-cols-2 gap-space-xs font-body-sm text-body-sm text-on-surface-variant bg-surface-container-lowest p-space-xs rounded">
+<div>On Hand: <span class="text-error font-mono font-bold">42 units</span></div>
+<div>30d Forecast: <span class="text-on-surface font-mono font-bold">380 units</span></div>
+</div>
+<div class="flex items-center justify-between pt-0.5">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Recommended PO: <span class="text-primary font-mono font-bold">+350</span></span>
+<button class="px-space-md py-1 rounded bg-primary text-on-primary font-label-sm text-label-sm font-semibold uppercase active:scale-95 transition-all" id="btn-sku-8821" onclick="handlePO('sku-8821', 350)" type="button">
+          Auto-PO +350 Units
+        </button>
+</div>
+</div>
+<!-- SKU Card 2 -->
+<div class="p-space-sm rounded bg-surface-container flex flex-col gap-space-xs" id="row-sku-5902">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs min-w-0">
+<span class="font-mono text-secondary font-label-md text-label-md">SKU-5902</span>
+<span class="font-label-md text-label-md text-on-surface truncate">Merino Beanie</span>
+</div>
+<span class="px-1.5 py-0.2 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-mono">Buffer Low</span>
+</div>
+<div class="grid grid-cols-2 gap-space-xs font-body-sm text-body-sm text-on-surface-variant bg-surface-container-lowest p-space-xs rounded">
+<div>On Hand: <span class="text-on-surface font-mono font-bold">110 units</span></div>
+<div>30d Forecast: <span class="text-on-surface font-mono font-bold">520 units</span></div>
+</div>
+<div class="flex items-center justify-between pt-0.5">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Recommended PO: <span class="text-secondary font-mono font-bold">+400</span></span>
+<button class="px-space-md py-1 rounded bg-secondary text-on-secondary font-label-sm text-label-sm font-semibold uppercase active:scale-95 transition-all" id="btn-sku-5902" onclick="handlePO('sku-5902', 400)" type="button">
+          Approve PO +400
+        </button>
+</div>
+</div>
+<!-- SKU Card 3 -->
+<div class="p-space-sm rounded bg-surface-container flex flex-col gap-space-xs" id="row-sku-2289">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs min-w-0">
+<span class="font-mono text-on-surface-variant font-label-md text-label-md">SKU-2289</span>
+<span class="font-label-md text-label-md text-on-surface truncate">Fleece Overshirt</span>
+</div>
+<span class="px-1.5 py-0.2 rounded bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm font-mono">Planned</span>
+</div>
+<div class="grid grid-cols-2 gap-space-xs font-body-sm text-body-sm text-on-surface-variant bg-surface-container-lowest p-space-xs rounded">
+<div>On Hand: <span class="text-on-surface font-mono font-bold">85 units</span></div>
+<div>30d Forecast: <span class="text-on-surface font-mono font-bold">290 units</span></div>
+</div>
+<div class="flex items-center justify-between pt-0.5">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Lead Time: 18d</span>
+<button class="px-space-md py-1 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm font-semibold uppercase hover:bg-surface-container-highest transition-all" id="btn-sku-2289" onclick="handlePO('sku-2289', 200)" type="button">
+          Schedule Reorder
+        </button>
+</div>
+</div>
+<!-- Table Batch CTA Footer -->
+<div class="pt-space-xs flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Total Recommended Batch: 950 units</span>
+<button class="flex items-center gap-1 px-space-md py-1.5 rounded bg-primary text-on-primary font-label-md text-label-md font-semibold uppercase tracking-wider shadow-sm active:scale-95 transition-transform" onclick="batchApproveAll()" type="button">
+<span class="material-symbols-outlined text-[16px]">done_all</span>
+        Batch Approve All
+      </button>
+</div>
+</div>
+<!-- Micro-interaction feedback toast container -->
+<div class="fixed bottom-20 left-4 right-4 z-40 bg-surface-container-highest text-on-surface p-space-sm rounded shadow-lg flex items-center justify-between transition-all duration-300 transform translate-y-24 opacity-0 pointer-events-none" id="toast-banner">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+<span class="font-label-md text-label-md" id="toast-text">PO Dispatched to Supplier EDI</span>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface" onclick="dismissToast()" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+</div>
+<script>
+  function switchHorizon(mode) {
+    const b7 = document.getElementById('horizon-7d');
+    const b30 = document.getElementById('horizon-30d');
+    const bAct = document.getElementById('horizon-act');
+    const band = document.getElementById('confidence-band');
+    const forecast = document.getElementById('forecast-line');
+    const tooltip = document.getElementById('chart-tooltip');
+
+    [b7, b30, bAct].forEach(b => {
+      b.className = 'py-1 text-center rounded text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm transition-all';
+    });
+
+    if (mode === '7d') {
+      b7.className = 'py-1 text-center rounded bg-primary text-on-primary font-label-sm text-label-sm font-semibold transition-all';
+      band.setAttribute('points', '160,110 190,80 230,40 270,30 310,15 330,12 330,85 310,95 270,105 230,115 190,125 160,110');
+      forecast.setAttribute('points', '160,110 190,95 230,65 270,55 310,35 330,28');
+      tooltip.innerHTML = '<div class="flex items-center gap-1 font-body-sm text-body-sm"><span class="w-2 h-2 rounded-full bg-secondary"></span><span>7D Outlook Peak (Nov 28):</span></div><div class="font-mono text-primary font-label-md text-label-md font-bold">8,420 u (+62%)</div>';
+    } else if (mode === '30d') {
+      b30.className = 'py-1 text-center rounded bg-primary text-on-primary font-label-sm text-label-sm font-semibold transition-all';
+      band.setAttribute('points', '160,110 200,70 250,50 290,40 330,20 330,100 290,110 250,120 200,130 160,110');
+      forecast.setAttribute('points', '160,110 200,85 250,75 290,65 330,45');
+      tooltip.innerHTML = '<div class="flex items-center gap-1 font-body-sm text-body-sm"><span class="w-2 h-2 rounded-full bg-secondary"></span><span>30D Holiday Runrate:</span></div><div class="font-mono text-primary font-label-md text-label-md font-bold">184,200 u (Surge)</div>';
+    } else {
+      bAct.className = 'py-1 text-center rounded bg-primary text-on-primary font-label-sm text-label-sm font-semibold transition-all';
+      band.setAttribute('points', '0,0');
+      forecast.setAttribute('points', '160,110');
+      tooltip.innerHTML = '<div class="flex items-center gap-1 font-body-sm text-body-sm"><span class="w-2 h-2 rounded-full bg-primary"></span><span>Actual Historical (14D):</span></div><div class="font-mono text-primary font-label-md text-label-md font-bold">78,410 u logged</div>';
+    }
+  }
+
+  function handlePO(rowId, qty) {
+    const btn = document.getElementById('btn-' + rowId);
+    if (btn) {
+      btn.innerHTML = '<span class="material-symbols-outlined text-[14px] animate-spin">refresh</span> Processing';
+      btn.classList.remove('bg-primary', 'bg-secondary');
+      btn.classList.add('bg-surface-container-highest', 'text-primary');
+      setTimeout(() => {
+        btn.innerHTML = 'PO Dispatched ✓';
+        btn.disabled = true;
+        showToast('Auto-PO #' + rowId.toUpperCase() + ' (+' + qty + ' units) transmitted to ERP');
+      }, 600);
+    }
+  }
+
+  function quickReorder(sku) {
+    handlePO(sku.toLowerCase(), 350);
+  }
+
+  function batchApproveAll() {
+    handlePO('sku-8821', 350);
+    handlePO('sku-5902', 400);
+    handlePO('sku-2289', 200);
+    showToast('Batch approved 950 units across 3 suppliers');
+  }
+
+  let toastTimer;
+  function showToast(msg) {
+    const toast = document.getElementById('toast-banner');
+    const txt = document.getElementById('toast-text');
+    txt.innerText = msg;
+    toast.classList.remove('translate-y-24', 'opacity-0', 'pointer-events-none');
+    toast.classList.add('translate-y-0', 'opacity-100');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => {
+      dismissToast();
+    }, 4000);
+  }
+
+  function dismissToast() {
+    const toast = document.getElementById('toast-banner');
+    toast.classList.add('translate-y-24', 'opacity-0', 'pointer-events-none');
+    toast.classList.remove('translate-y-0', 'opacity-100');
+  }
+</script></main><nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]" data-active-classes="text-primary font-semibold"><div class="flex justify-around items-center h-16 px-space-xs"><a aria-current="page" class="flex flex-col items-center justify-center gap-0.5 w-16 h-11 transition-colors text-primary font-semibold" data-path="forecast-overview" href="file:///C:/Users/venne/AppData/Local/Temp/e6210c7a-bde5-44a6-b755-407417e08353_stitch_retail_demand_ai_dashboard.zip.353/stitch_retail_demand_ai_dashboard/ai_demand_forecast_inventory_dashboard/code.html#"><span class="material-symbols-outlined text-[20px]">insights</span><span class="font-label-sm text-label-sm">Forecast</span></a><a class="flex flex-col items-center justify-center gap-0.5 w-16 h-11 text-on-surface-variant hover:text-on-surface transition-colors" data-path="seasonality-trends" href="file:///C:/Users/venne/AppData/Local/Temp/e6210c7a-bde5-44a6-b755-407417e08353_stitch_retail_demand_ai_dashboard.zip.353/stitch_retail_demand_ai_dashboard/ai_demand_forecast_inventory_dashboard/code.html#"><span class="material-symbols-outlined text-[20px]">trending_up</span><span class="font-label-sm text-label-sm">Trends</span></a><a class="flex flex-col items-center justify-center gap-0.5 w-16 h-11 text-on-surface-variant hover:text-on-surface transition-colors" data-path="anomaly-radar" href="file:///C:/Users/venne/AppData/Local/Temp/e6210c7a-bde5-44a6-b755-407417e08353_stitch_retail_demand_ai_dashboard.zip.353/stitch_retail_demand_ai_dashboard/ai_demand_forecast_inventory_dashboard/code.html#"><span class="material-symbols-outlined text-[20px]">crisis_alert</span><span class="font-label-sm text-label-sm">Anomalies</span></a><a class="flex flex-col items-center justify-center gap-0.5 w-16 h-11 text-on-surface-variant hover:text-on-surface transition-colors" data-path="inventory-actions" href="file:///C:/Users/venne/AppData/Local/Temp/e6210c7a-bde5-44a6-b755-407417e08353_stitch_retail_demand_ai_dashboard.zip.353/stitch_retail_demand_ai_dashboard/ai_demand_forecast_inventory_dashboard/code.html#"><span class="material-symbols-outlined text-[20px]">shopping_cart_checkout</span><span class="font-label-sm text-label-sm">Reorder</span></a></div></nav></body></html>
